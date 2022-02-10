@@ -46,7 +46,6 @@ const computedWord = compose(space, len)
 console.log(computedWord('i am linsanxin')) // 3
 console.log(computedWord('i am 23 year old')) // 6
 console.log(computedWord('i am a author in juejin')) // 7
-//111111
 
 ```
 
