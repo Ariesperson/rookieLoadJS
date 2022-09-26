@@ -1,3 +1,4 @@
+//深拷贝  深度优先的列子
 let obj = {
     node:'test1',
     data:{
@@ -23,6 +24,7 @@ let obj = {
         }
     ]
 }
+
 const deepcopy=(source)=>{
     let result = {}
     for (const key in source) {
