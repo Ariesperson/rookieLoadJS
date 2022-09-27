@@ -16,7 +16,6 @@ let newarr = arr.fillter((item,index,arr)=>{
     return arr.indexOf(item,0)===index
 })
 ```
-
 ## Map去重
 
 ```javascript

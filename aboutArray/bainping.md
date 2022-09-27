@@ -76,7 +76,5 @@ function flatter (arr){
    return result
 }
 
-
-
 ```
 
