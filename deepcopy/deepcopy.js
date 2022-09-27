@@ -17,7 +17,9 @@ let obj = {
     children:[
         {
             node:'div',
-            props:{}
+            props:{
+                
+            }
         },
         {
 

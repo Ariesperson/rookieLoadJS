@@ -55,11 +55,28 @@ console.log(flatten(arr))
 ## 循环递归
 
 ```javascript
+//当只有一层嵌套数组使用concat直接全部链接在一起
+let arr2 = [1, [2, 3,4,5,6]]
 let result = [];
 for (let i = 0; i < arr2.length; i++) {
+     result = result.concat((arr2[i]));
 }
 console.log(result);
 [ 1, 2, 3, 4, 5, 6 ]
+//当有多层的时候的纯数字的时候
+function flatter (arr){
+    let result = []
+    for(let i=0;i<arr.length;i++){
+        if(Array.isArray(arr[i]){
+          result =result.concat(flatter(arr[i]))
+        }else{
+            result.push(arr[i])
+        }
+    }
+   return result
+}
+
+
 
 ```
 
