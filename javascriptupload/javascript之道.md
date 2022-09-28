@@ -1,0 +1,83 @@
+# JavaScript之道
+
+第一个模块，我们先来讲讲函数式和面向对象的编程模式，毕竟其中的一些核心概念或元认知（metacognition）即使不是恒久不变，也至少是到目前为止，经受住了时间考验的核心理论和实践。因此，当你理解和掌握了这两类核心编程范式之后，你就知道要如何结合 JavaScript 的特性进行取长补短了，也能够因地制宜地解决实际问题了。
+
+## 编程模式
+
+![](D:\frontEnd\rookieLoadJS\javascriptupload\img\8b03bea0b1578372311923c81053e26d.webp)
+
+## 函数式编程
+
+
+
+什么是函数？函数式数据集到目标的一种关系（输入、算法、输出）
+
+什么是高阶函数？函数的输入或者输入也是一个函数。
+
+![](D:\frontEnd\rookieLoadJS\javascriptupload\img\8d6e82514b0acf5794d7a4b162806160.webp)
+
+函数的副作用：
+
+1、全局变量 
+
+ 2、IO影响（浏览器端的用户行为，文件系统、网络连接以及stream的stdin和stdout）  
+
+3、网络请求。
+
+为了减少副作用——>纯函数和不可变
+
+纯函数：强调自身稳定性，输入输出稳定一致。对结果只影响一次（对内）
+
+不可变：尽量减少函数内部和外界的交互，减少负面影响（对外）
+
+![](D:\frontEnd\rookieLoadJS\javascriptupload\img\668060b8cfdf2dd6569975d96e9ef2ed.webp)
+
+![](D:\frontEnd\rookieLoadJS\javascriptupload\img\10da7a3de6f518c1b3f4c68748e26fcb (1).webp)
+
+## 面向对象编程
+
+
+
+对象是什么？比如“表单”“购物车”“订单”，这些都可以看做是对象。工具和方法通常是服务于对象的。
+
+
+
+为什么需要封装、重用和继承？
+
+函数加对象组成了生产力，那么封装、重用和继承则可以用来组成生产关系。
+
+![](D:\frontEnd\rookieLoadJS\javascriptupload\img\d243d2785c92e59e77c6dbae579b4a0f.webp)
+
+封装：是一个动作，把可复用的模块、组件剥离出来。
+
+重用：是一个动作，把重复使用的功能抽象到一个类里。
+
+继承：子类继承某个父类，获取它的功能。
+
+
+
+为何“组合”优于“继承”？
+
+实际上，在面向对象中，也有组合的概念，就是一个子类不是继承的某个父类，而是通过组合多个类，来形成一个类。这也很像我们如今的职场，公司为了应付外界竞争压力，内部会有一个个的敏捷团队，通过每个成员自身价值和团队“组合”产生 1+1>2 的价值，而不是强调依靠某种从属关系。
+
+
+
+JavaScript 中的类和其它面向对象的语言，究竟有什么不同？
+
+js中的继承——》基于原型的继承。
+
+在JS中并没有类和对象之间的拷贝从属关系。实际上JS对象和类，是构建函数之间的原型链接关系。比如原型链的向上查找规则就说明了，这些东西并没有直接复制到对象上，而是通过原型链查找链上是否存在该变量或者方法。它所产生的问题就是，JS中的继承的子类可能会有自己并不想要看到的方法。
+
+![](D:\frontEnd\rookieLoadJS\javascriptupload\img\d243d2785c92e59e77c6dbae579b4a0f.webp)
+
+![](D:\frontEnd\rookieLoadJS\javascriptupload\img\a3f82ea686a9022fa2a5c4d22f22c45d.webp)
+
+![](D:\frontEnd\rookieLoadJS\javascriptupload\img\d243d2785c92e59e77c6dbae579b4a0f.webp)
+
+![](D:\frontEnd\rookieLoadJS\javascriptupload\img\f9173ef0176ecyy13f2d744bf978e8c0.webp)
+
+
+
+思考：JavaScript 中的常量（const，constant）算不算不可变呢？
+
+不算。 因为当const定义的是一个引用类型的时候，实际上它内部的属性值是可以变化的。
