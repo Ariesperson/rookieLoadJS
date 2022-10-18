@@ -73,21 +73,6 @@ a.func2()            // Cherry
 
 ```
 
-手写实现call
-
-```javascript
-Function.prototype.mycall = function(context=window){
-	let fn  = Symbol()
-	context.fn = this; //切换this指向的作用。
-    let args= [...arguments].splice(1);
-    let result = context[fn](...args);
-    delete context[fn];
-    return result;
-}
-```
-
-
-
 ## bind
 
 使用call让this指向特定的对象
